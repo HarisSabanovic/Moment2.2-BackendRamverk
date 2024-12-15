@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startsidan</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-link">Spellista</a>
+        <a href="addgame.html" class="nav-link">Lägg till spel</a>
+    </nav>
+
+    <h1>Spellista 2024</h1>
+    <p>Här har jag samlat alla spel jag har spelat under 2024. Ingen recension, inget betyg bara en lista på spelen jag har haft kul med. Oavsett om det handlar om ett episkt äventyr eller något mer avslappnat, så kan du här se vad jag har spelat under året. Hoppas du hittar några spel som du också gillar!</p>
+    <div id="games-container"></div>
+
+     <!-- Popup-fönster för uppdatering -->
+     <div id="updateModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Uppdatera Spel</h2>
+            <form id="updateForm">
+                <input type="hidden" id="gameId" name="id">
+
+                <label for="name">Spel Namn:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="description">Beskrivning:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <label for="price">Pris (SEK):</label>
+                <input type="number" id="price" name="price" required min="0">
+
+                <label for="year">År:</label>
+                <input type="number" id="year" name="year" required min="1958">
+
+                <label for="coverUrl">Omslagsbild (URL):</label>
+                <input type="text" id="coverUrl" name="coverUrl">
+
+                <label for="played">Spelad:</label>
+                <input type="checkbox" id="played" name="played">
+
+                <button type="submit">Uppdatera</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

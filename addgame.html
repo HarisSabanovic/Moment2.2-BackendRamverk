@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/addpost.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-link">Spellista</a>
+        <a href="addgame.html" class="nav-link">Lägg till spel</a>
+    </nav>
+
+    <form id="gameForm" action="https://dt193g-backendramverk.onrender.com/games" method="POST">
+        <label for="name">Titel:</label>
+        <input type="text" id="name" name="name" required placeholder="Spelets titel..."><br><br>
+
+        <label for="description">Beskrivning:</label>
+        <textarea id="description" name="description" required placeholder="Spelet handlar om..."></textarea><br><br>
+
+        <label for="price">Pris (SEK):</label>
+        <input type="number" id="price" name="price" required placeholder="Ex. 299"><br><br>
+
+        <label for="year">År:</label>
+        <input type="number" id="year" name="year" required min="1958"><br><br>
+
+        <label for="coverUrl">Omslagsbild (URL):</label>
+        <input type="text" id="coverUrl" name="coverUrl" required placeholder="https://..."><br><br>
+
+        <label for="played">Spelad:</label>
+        <input type="checkbox" id="played" name="played"><br><br>
+
+        <button type="submit">Lägg till spel</button>
+    </form>
+
+    <script src="js/addGame.js"></script>
+</body>
+</html>

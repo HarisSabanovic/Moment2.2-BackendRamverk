@@ -1,0 +1,77 @@
+form {
+    background-color: #222;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+textarea { 
+    min-height: 80px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #f1c40f; 
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    background-color: #3498db; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #2980b9; 
+}
+
+button:focus {
+    outline: none;
+    background-color: #f1c40f;
+    box-shadow: 0 0 4px rgba(216, 203, 19, 0.8);
+    color: black;
+}
+
+/* Anpassning för checkboxen */
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Gör checkboxen lite större */
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        padding: 15px;
+        gap: 10px; /* Mindre avstånd på små skärmar */
+    }
+
+    button {
+        width: 100%; /* Knappar fyller bredden på små skärmar */
+        align-self: center;
+    }
+}

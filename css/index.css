@@ -1,0 +1,225 @@
+
+h1{
+    text-align: center;
+    margin-top: 4%;
+}
+
+p {
+    max-width: 65ch;
+    margin-inline: auto;
+    line-height: 1.8;
+    margin-bottom: 6%;
+    font-size: 18px;
+    text-align: center;
+}
+
+#games-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 10px;
+}
+
+.game-card {
+    position: relative;
+    background: #222;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.game-card img {
+    display: block;
+    margin-inline: auto;
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-card:hover img {
+    transform: scale(1.05);
+}
+
+.game-card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: #f1c40f;
+}
+
+.game-card p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-card button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.game-card button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+.game-card button.update-button {
+    background-color: #2ecc71;
+}
+
+.game-card button.delete-button {
+    background-color: #e74c3c;
+}
+
+.game-card button.update-button:hover {
+    background-color: #27ae60;
+}
+
+.game-card button.delete-button:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 1024px) { 
+    #games-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    #games-container {
+        grid-template-columns: 1fr; 
+    }
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Mörkare bakgrund */
+    overflow: auto; /* Lägg till scroll om innehållet är stort */
+}
+
+.modal-content {
+    background-color: #f9f9f9; /* Ljusare bakgrund för kontrast */
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lätt skugga */
+    animation: slide-down 0.3s ease-out; /* Enkel animations-effekt */
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #d9534f; /* Röd färg vid hover */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none; /* Förhindrar att användaren ändrar storlek */
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff; /* Blått fokus */
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    background-color: #007bff; /* Primär blå färg */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Mörkare blå vid hover */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
